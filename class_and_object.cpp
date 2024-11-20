@@ -1,8 +1,7 @@
-// how to create class and object in c++ and its implement
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-class Student //user define data type
+class Student // user-defined data type
 {
     public:
     char name[100];
@@ -12,13 +11,20 @@ class Student //user define data type
 
 int main()
 {
-    Student a; 
-    a.gpa=3.96;
-    a.name;
-    a.roll=10;
-    char temp[100]="Sakib";
-    strcpy(a.name, temp);
+    Student a, b; 
 
-    cout<< a.name << " " << a.roll << " " << a.gpa << endl;
+    // Input for Student a
+    cin.getline(a.name, 100);  // Read the name
+    cin >> a.roll >> a.gpa;    // Read roll and gpa
+    cin.ignore();              // Clear the leftover newline from the buffer
+
+    // Input for Student b
+    cin.getline(b.name, 100);  // Read the name
+    cin >> b.roll >> b.gpa;    // Read roll and gpa
+
+    // Output
+    cout << a.name << " " << a.roll << " " << a.gpa << endl;
+    cout << b.name << " " << b.roll << " " << b.gpa << endl;
+
     return 0;
 }
