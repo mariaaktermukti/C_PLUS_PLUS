@@ -3,7 +3,7 @@
 #include <limits>
 using namespace std;
 
-// Struct to represent a student
+
 struct Student {
     int id;
     string name;
