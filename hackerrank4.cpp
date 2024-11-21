@@ -3,7 +3,6 @@
 #include <limits>
 using namespace std;
 
-
 struct Student {
     int id;
     string name;
@@ -12,31 +11,26 @@ struct Student {
 };
 
 int main() {
-    int T; // Number of test cases
+    int T; 
     cin >> T;
 
-    // Iterate through each test case
     while (T--) {
-        Student students[3]; // Array to hold data for 3 students
+        Student students[3]; 
 
-        // Read input for 3 students
         for (int i = 0; i < 3; i++) {
             cin >> students[i].id >> students[i].name >> students[i].section >> students[i].totalMarks;
         }
 
-        // Initialize the "best student" with impossible values
         Student bestStudent = {std::numeric_limits<int>::max(), "", ' ', -1};
 
-        // Find the best student
         for (int i = 0; i < 3; i++) {
             if (students[i].totalMarks > bestStudent.totalMarks) {
-                bestStudent = students[i]; // Update if higher marks
+                bestStudent = students[i]; 
             } else if (students[i].totalMarks == bestStudent.totalMarks && students[i].id < bestStudent.id) {
-                bestStudent = students[i]; // Update if same marks but smaller ID
+                bestStudent = students[i]; 
             }
         }
 
-        // Print the best student's details
         cout << bestStudent.id << " " << bestStudent.name << " " << bestStudent.section << " " << bestStudent.totalMarks << endl;
     }
 
