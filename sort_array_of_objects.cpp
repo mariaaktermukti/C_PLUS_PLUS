@@ -12,14 +12,15 @@ class Student
 
 bool cmp(Student l,Student r)
 {
-    if(l.marks < r.marks)
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
+    // if(l.marks < r.marks)   //ami jei order e chai oita 1st e thakbe
+    // {
+    //     return true;
+    // }
+    // else
+    // {
+    //     return false;
+    // }
+    return l.marks < r.marks;
 
 }
 
