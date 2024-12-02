@@ -14,9 +14,12 @@ struct Student {
     }
 };
 
-bool compare(Student a, Student b) {
-    return make_pair(-a.totalMarks(), a.id) < make_pair(-b.totalMarks(), b.id);
+bool compare(const Student &a, const Student &b) {
+    if (a.totalMarks() != b.totalMarks())
+        return a.totalMarks() > b.totalMarks(); 
+    return a.id < b.id; 
 }
+
 
 int main() {
     int N;
