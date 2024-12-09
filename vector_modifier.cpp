@@ -26,15 +26,20 @@ int main()
     //     cout << x << " ";
     // }
 
-    auto it = find(v.begin(), v.end(), 5);
+    // auto it = find(v.begin(), v.end(), 5);
     // cout << *it << endl;
-    if(it==v.end())
+    // if(it==v.end())
+    // {
+    //     cout << "Not found";
+    // }
+    // else
+    // {
+    //     cout << "found";
+    // }
+
+    for(auto it= v.begin();it<v.end();it++)
     {
-        cout << "Not found";
-    }
-    else
-    {
-        cout << "found";
+        cout << *it << " ";
     }
 
    
