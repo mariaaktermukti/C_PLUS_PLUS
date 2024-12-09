@@ -2,7 +2,8 @@
 using namespace std;
 int main()
 {
-    vector<int> v={1,2,3,4}; 
+    vector<int> v={1,2,3,2,5,2}; 
+    // vector<int> v2={100,200,300};
     // v.pop_back();
     // v.pop_back();
     // vector<int> v2;  
@@ -16,11 +17,27 @@ int main()
     //     cout << x << " ";
     // }
 
-     v.insert(v.begin()+2,100);
-     for(int x :v)
+    //  v.insert(v.begin()+2,v2.begin(),v2.end()); // multiple value insert
+
+    // v.erase(v.begin()+1,v.begin()+5);
+    // replace(v.begin(), v.end(),2,100);
+     //  for(int x :v)
+    // {
+    //     cout << x << " ";
+    // }
+
+    auto it = find(v.begin(), v.end(), 5);
+    // cout << *it << endl;
+    if(it==v.end())
     {
-        cout << x << " ";
+        cout << "Not found";
     }
+    else
+    {
+        cout << "found";
+    }
+
+   
     return 0; 
 
 }
