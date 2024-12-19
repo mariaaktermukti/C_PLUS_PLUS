@@ -1,6 +1,6 @@
-// get difference 
 #include <bits/stdc++.h>
 using namespace std;
+
 class Node {
 public:
     int val;
@@ -10,32 +10,20 @@ public:
         this->next = NULL;
     }
 };
-void insert_at_any_pos(Node* &head, int idx, int val) 
-{
+
+void insert_at_end(Node* &head, Node* &tail, int val) {
     Node* newnode = new Node(val);
-    if (idx == 1) {
-        newnode->next = head;
+    if (head == NULL) {
         head = newnode;
-        return;
+        tail = newnode;
+    } 
+    else {
+        tail->next = newnode;
+        tail = newnode;
     }
-    Node* tmp = head;
-    for (int i = 1; i < idx - 1 && tmp != NULL; i++) {
-        tmp = tmp->next;
-    }
-    if (tmp == NULL) return;
-    newnode->next = tmp->next;
-    tmp->next = newnode;
 }
-void print_linked_list(Node* head) {
-    Node* tmp = head;
-    while (tmp != NULL) {
-        cout << tmp->val << " ";
-        tmp = tmp->next;
-    }
-    cout << endl;
-}
-int find_max_min_difference(Node* head)
- {
+
+int find_max_min_difference(Node* head) {
     if (head == NULL) return 0; 
     int maxVal = INT_MIN;
     int minVal = INT_MAX;
@@ -51,10 +39,13 @@ int find_max_min_difference(Node* head)
 
 int main() {
     Node* head = NULL; 
-    int value, pos = 1; 
+    Node* tail = NULL; 
+
+    int value;
     while (cin >> value && value != -1) {
-        insert_at_any_pos(head, pos++, value);
+        insert_at_end(head, tail, value); 
     }
+    
     cout << find_max_min_difference(head) << endl;
 
     return 0;
