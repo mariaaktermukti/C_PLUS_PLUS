@@ -3,7 +3,7 @@ using namespace std;
 void fun(int* p)
 {
     int y=200;
-    p=&y;
+    p=&
     cout<< "In fun: " <<*p << endl;
 }
 
