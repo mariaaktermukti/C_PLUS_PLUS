@@ -62,7 +62,7 @@ void insert_at_any_pos(Node* head, int idx, int val)
 int main()
 {
     Node* head = new Node(10);
-    Node* a = new Node(20);
+    Node* a = new Node(15);
     Node* tail = new Node(30);
 
     head->next = a;
