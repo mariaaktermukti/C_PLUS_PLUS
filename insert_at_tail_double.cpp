@@ -29,6 +29,11 @@ void print_forward(Node* head)
 void insert_at_tail(Node* &head,Node* &tail,int val)
 {
     Node* newnode=new Node(val);
+    if(head==NULL){
+        head=newnode;
+        tail=newnode;
+        return;
+    }
     tail->next=newnode;
     newnode->prev= tail;
     tail=newnode;
