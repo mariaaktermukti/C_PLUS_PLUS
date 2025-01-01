@@ -31,8 +31,7 @@ void insert_at_any_pos(Node* head, int idx, int val)
 {
     Node* newNode = new Node(val);
     Node* tmp = head;
-
-    // Inserting at the beginning (if idx == 0)
+    
     if (idx == 0)
     {
         newNode->next = head;
@@ -42,13 +41,11 @@ void insert_at_any_pos(Node* head, int idx, int val)
         return;
     }
 
-    // Traverse the list to find the insertion point
     for (int i = 0; i < idx - 1 && tmp != NULL; i++)
     {
         tmp = tmp->next;
     }
 
-    // Insert at the end if idx is out of range
     if (tmp == NULL)
     {
         cout << "Invalid position!" << endl;
@@ -74,10 +71,7 @@ int main()
     a->next = tail;
     tail->prev = a;
 
-    // Insert at position 2 with value 100
     insert_at_any_pos(head, 2, 100);
-
-    // Print the list forward
     print_forward(head);
 
     return 0;
