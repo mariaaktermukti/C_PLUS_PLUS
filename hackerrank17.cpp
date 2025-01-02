@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 class Node {
@@ -14,7 +14,8 @@ public:
     }
 };
 
-bool isPalindrome(Node* head) {
+bool isPalindrome(Node* head) 
+{
     if (head == NULL || head->next == NULL) 
     {
         return true; 
@@ -29,7 +30,7 @@ bool isPalindrome(Node* head) {
     Node* front = head;
     Node* back = tail;
 
-    while (front != back && front->next != back) 
+    while (front != back && front->prev != back && front != back->next) 
     {
         if (front->val != back->val) 
         {
@@ -45,12 +46,11 @@ bool isPalindrome(Node* head) {
 void insertEnd(Node*& head, int val) 
 {
     Node* newNode = new Node(val);
-    if (head == NULL) 
-    {
+    if (head == NULL) {
         head = newNode;
     } 
-    else 
-    {
+    else
+     {
         Node* temp = head;
         while (temp->next != NULL) 
         {
@@ -58,7 +58,6 @@ void insertEnd(Node*& head, int val)
         }
         temp->next = newNode;
         newNode->prev = temp;  
-        
     }
 }
 
@@ -66,12 +65,12 @@ int main() {
     Node* head = NULL;
     int value;
 
-    while (cin >> value && value != -1)
+    while (cin >> value && value != -1) 
     {
         insertEnd(head, value);
     }
 
-    if (isPalindrome(head))
+    if (isPalindrome(head)) 
     {
         cout << "YES" << endl;
     } 
