@@ -19,7 +19,8 @@ public:
 
     void addNode(int val) {
         Node* newNode = new Node(val);
-        if (!head) {
+        if (!head) 
+        {
             head = tail = newNode;
         } else {
             tail->next = newNode;
