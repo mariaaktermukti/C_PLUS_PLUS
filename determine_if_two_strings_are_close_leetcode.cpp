@@ -11,7 +11,7 @@ public:
         if (word1.size() != word2.size()) return false;
 
         vector<int> freq1(26, 0), freq2(26, 0);
-        unordered_set<char> set1, set2;
+        unordered_set<char> set1, set2; 
 
         for (char c : word1) {
             freq1[c - 'a']++;
