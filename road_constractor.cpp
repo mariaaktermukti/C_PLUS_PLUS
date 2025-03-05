@@ -1,8 +1,11 @@
 #include<bits/stdc++.h>
 using namespace std;
-int par[1005];
-int group_size[1005];
+
+int par[100005];
+int group_size[100005]; 
 int cmp,mx;
+
+
 int find(int node)
 {
     if(par[node]== -1)
@@ -16,6 +19,10 @@ void dsu_union(int node1, int node2)
 {
     int leader1 = find(node1);
     int leader2 = find(node2);
+    if(leader1== leader2)
+    {
+        return;
+    }
 
     if(group_size[leader1] >= group_size[leader2])
     {
